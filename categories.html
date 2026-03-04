@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusCard - Categories</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="STY1.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url("images/BACKGROUND1.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #f39c12;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 20px;
+        }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 220px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+
+        .category-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #f39c12;
+        }
+
+        /* Product Detail Section */
+        .product-details {
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 30px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>CATEGORIES</h1>
+
+<div class="navbar">
+    <a href="home.html">HOME</a>
+    <a href="categories.html">CATEGORIES</a>
+    <a href="offers.html">OFFERS</a>
+    <a href="account.html">ACCOUNT</a>
+</div>
+
+<div class="category-container">
+
+    <div class="category-card">
+        <img src="images/pens.png" alt="Pens">
+        <h3>Pens</h3>
+        <button class="btn" onclick="showDetails('Pens', '$10', '$8', 'Premium Ink Quality')">View Products</button>
+    </div>
+
+    <div class="category-card">
+        <img src="images/bags.webp" alt="Bags">
+        <h3>School Bags</h3>
+        <button class="btn" onclick="showDetails('School Bags', '$40', '$30', 'High Quality Fabric')">View Products</button>
+    </div>
+
+    <div class="category-card">
+        <img src="images/books.jpg" alt="Books">
+        <h3>Books & Notebooks</h3>
+        <button class="btn" onclick="showDetails('Books & Notebooks', '$25', '$18', 'Premium Paper Quality')">View Products</button>
+    </div>
+
+    <div class="category-card">
+        <img src="images/GEOMETRY.jpg" alt="Geometry">
+        <h3>Geometry Set</h3>
+        <button class="btn" onclick="showDetails('Geometry Set', '$15', '$12', 'Durable Metal Tools')">View Products</button>
+    </div>
+
+</div>
+
+<!-- Product Details Section -->
+<div class="product-details" id="productDetails">
+    <h2 id="productName"></h2>
+    <p><strong>Price:</strong> <span id="price"></span></p>
+    <p><strong>Cost:</strong> <span id="cost"></span></p>
+    <p><strong>Quality:</strong> <span id="quality"></span></p>
+    <p><strong>Description:</strong> Best selling product in our CampusCard store.</p>
+</div>
+
+<footer>
+    <p>&copy; 2026 CampusCard | All Rights Reserved</p>
+</footer>
+
+<script>
+function showDetails(name, price, cost, quality) {
+    document.getElementById("productName").innerText = name;
+    document.getElementById("price").innerText = price;
+    document.getElementById("cost").innerText = cost;
+    document.getElementById("quality").innerText = quality;
+
+    document.getElementById("productDetails").style.display = "block";
+}
+</script>
+
+</body>
+</html>

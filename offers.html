@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusCard - Offers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="STY1.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url("images/BACKGROUND1.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #f39c12;
+        }
+
+        .offers-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 20px;
+        }
+
+        .offer-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 220px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .offer-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .price {
+            text-decoration: line-through;
+            color: #ffcccc;
+        }
+
+        .offer-price {
+            color: #00ff99;
+            font-weight: bold;
+        }
+
+        input {
+            width: 50px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #f39c12;
+        }
+
+        #order-summary {
+            text-align: center;
+            margin: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🔥 SPECIAL OFFERS 🔥</h1>
+
+<div class="navbar">
+    <a href="home.html">HOME</a>
+    <a href="categories.html">CATEGORIES</a>
+    <a href="offers.html">OFFERS</a>
+    <a href="account.html">ACCOUNT</a>
+</div>
+
+<div class="offers-container">
+
+    <!-- Offer 1 -->
+    <div class="offer-card">
+        <img src="images/pens.png" alt="Pens">
+        <h3>Pen Set</h3>
+        <p class="price">₹50</p>
+        <p class="offer-price">Offer: ₹35</p>
+        Quantity: <br>
+        <input type="number" id="qty1" min="1" value="1"><br>
+        <button class="btn" onclick="orderProduct('Pen Set',35,'qty1')">Order Now</button>
+    </div>
+
+    <!-- Offer 2 -->
+    <div class="offer-card">
+        <img src="images/bags.webp" alt="Bag">
+        <h3>School Bag</h3>
+        <p class="price">₹800</p>
+        <p class="offer-price">Offer: ₹650</p>
+        Quantity: <br>
+        <input type="number" id="qty2" min="1" value="1"><br>
+        <button class="btn" onclick="orderProduct('School Bag',650,'qty2')">Order Now</button>
+    </div>
+
+    <!-- Offer 3 -->
+    <div class="offer-card">
+        <img src="images/books.jpg" alt="Notebook">
+        <h3>Notebook Pack</h3>
+        <p class="price">₹200</p>
+        <p class="offer-price">Offer: ₹150</p>
+        Quantity: <br>
+        <input type="number" id="qty3" min="1" value="1"><br>
+        <button class="btn" onclick="orderProduct('Notebook Pack',150,'qty3')">Order Now</button>
+    </div>
+    <!-- Offer 3 -->
+    <div class="offer-card">
+        <img src="images/colorpaper.png" alt="Notebook">
+        <h3>Color Paper</h3>
+        <p class="price">₹50</p>
+        <p class="offer-price">Offer: ₹35</p>
+        Quantity: <br>
+        <input type="number" id="qty3" min="1" value="1"><br>
+        <button class="btn" onclick="orderProduct('Notebook Pack',150,'qty3')">Order Now</button>
+    </div>
+ <!-- Offer 3 -->
+    <div class="offer-card">
+        <img src="images/EXAM PADS.jpg" alt="Notebook">
+        <h3>exam pad</h3>
+        <p class="price">₹60</p>
+        <p class="offer-price">Offer: ₹55</p>
+        Quantity: <br>
+        <input type="number" id="qty3" min="1" value="1"><br>
+        <button class="btn" onclick="orderProduct('Notebook Pack',150,'qty3')">Order Now</button>
+    </div>
+
+</div>
+
+<div id="order-summary"></div>
+
+<footer>
+    <p>&copy; 2026 CampusCard | All Rights Reserved</p>
+</footer>
+
+<script>
+function orderProduct(productName, price, qtyId) {
+    var quantity = document.getElementById(qtyId).value;
+    var total = price * quantity;
+
+    document.getElementById("order-summary").innerHTML =
+        "✅ Order Placed Successfully! <br>" +
+        "Product: " + productName + "<br>" +
+        "Quantity: " + quantity + "<br>" +
+        "Total Amount: ₹" + total;
+}
+</script>
+
+</body>
+</html>
